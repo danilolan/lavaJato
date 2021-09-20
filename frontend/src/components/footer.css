@@ -1,0 +1,17 @@
+footer.footer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2px 25px;
+    background-color: #0002;
+    box-shadow: var(--shadow);
+    font-size: 0.8em;
+    width: max-content;
+    height: max-content;
+    box-shadow: 
+        0 2px 23px 0 rgba(0, 0, 0, 0.1),
+        0 2px 49px 0 rgba(0, 0, 0, 0.06);
+    position: fixed;
+    bottom: 0;
+    border-radius: 3px;
+}

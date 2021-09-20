@@ -1,0 +1,22 @@
+{
+    "cars":[
+        {
+            "id": 1,
+            "time": "14:30",
+            "placa": "XFO9902",
+            "tipoLavagem": "basica",
+            "nome": "Robson",
+            "numero": "8399785642",
+            "pagamento": false
+        },
+        {
+            "id": 2,
+            "time": "15:30",
+            "placa": "XFG2842",
+            "tipoLavagem": "completa",
+            "nome": "Aline",
+            "numero": "8398674532",
+            "pagamento": true
+        }
+    ]
+}

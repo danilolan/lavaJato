@@ -1,0 +1,11 @@
+.NavItem a{
+    padding: 15px;
+    display: block;
+    color: #FFF;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.NavItem a:hover{
+    background: linear-gradient(to right, #0575e6, #021b79);
+}

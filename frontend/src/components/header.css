@@ -1,0 +1,25 @@
+.Header{
+    display: flex;
+    align-items: center;   
+}
+
+.Header .linkItem{
+    height: 98px;
+    overflow: hidden;
+}
+.Header .linkItem a{
+    display: flex;
+    font-weight: thin;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 1.8em;
+    height: 100%;
+    align-items: center;
+    padding: 0px 40px; 
+}
+
+.Header .linkItem a:hover{
+    background-color: #0093E9;
+    background-image: linear-gradient(62deg, #0093E9 0%, #80D0C7 92%);
+
+}
