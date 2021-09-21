@@ -1,0 +1,51 @@
+.Main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Form{
+    width: 50%;
+    margin: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Form .row{
+    padding: 0px 10px;
+}
+
+label{
+    margin: 0;
+}
+
+.select{
+    width: 100%;
+    margin: 3px 0px;
+    font-size: 1.1em;
+}
+
+.check{
+    margin: 0;
+    box-sizing: 3em;
+}
+
+.check:hover{
+    cursor: pointer;
+}
+
+.check:checked{
+    background-color: #2196F3;
+}
+
+.rowButton{
+    columns: 12;
+    display: flex;
+    justify-content: center;
+}
+
+.rowButton button{
+    margin: 10px;
+}
