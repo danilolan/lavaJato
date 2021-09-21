@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import 'font-awesome/css/font-awesome.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Top from './components/Top';
 import Routes from './Routes';

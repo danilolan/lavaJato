@@ -1,0 +1,14 @@
+.Home{
+    margin: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 5px;
+}
+.Home .title{
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.Home .subtitle{
+    text-align: center;
+    margin-bottom: 8px;
+}

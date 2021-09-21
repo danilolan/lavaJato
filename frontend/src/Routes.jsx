@@ -1,9 +1,9 @@
 import React from 'react';
 import {Switch, Route, Redirect} from 'react-router'
 
-import Home from './components/main/Home'
-import AddNew from './components/main/AddNew'
-import Table from './components/main/Table'
+import Home from './components/content/Home'
+import AddNew from './components/content/AddNew'
+import Table from './components/content/Table'
 
 function Routes(props) {
     return ( 

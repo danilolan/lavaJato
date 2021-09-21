@@ -8,17 +8,17 @@ function Header(props) {
         <div className="Header">
             <div className="linkItem">
                 <Link to='/'>
-                    <i className="fas fa-home"></i> Inicio
+                    <i className="fa fa-home"></i>&nbsp;Início
                 </Link>
             </div>
             <div className="linkItem">
                 <Link to='/addNew'>
-                    <i className="fas fa-home"></i> Adicionar
+                    <i className="fa fa-plus"></i>&nbsp;Adicionar
                 </Link>
             </div>
             <div className="linkItem">
                 <Link to='/table'>
-                    <i class="fas fa-home"></i> Tabela
+                    <i className="fa fa-table"></i>&nbsp;Tabela
                 </Link>
             </div>
         </div>

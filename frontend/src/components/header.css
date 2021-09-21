@@ -4,15 +4,16 @@
 }
 
 .Header .linkItem{
-    height: 98px;
+    height: 80px;
     overflow: hidden;
+    border-radius: 0px 0px 3px 3px ;
 }
 .Header .linkItem a{
     display: flex;
     font-weight: thin;
     color: #FFF;
     text-decoration: none;
-    font-size: 1.8em;
+    font-size: 1.3em;
     height: 100%;
     align-items: center;
     padding: 0px 40px; 
