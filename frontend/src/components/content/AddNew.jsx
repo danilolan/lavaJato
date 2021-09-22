@@ -2,8 +2,10 @@ import React from 'react';
 import './addNew.css'
 import axios from 'axios'
 
+import ConfMessage from './widgets/ConfMessage';
+
 //-----------------------------------------------------------------------------------
-//                            ADICIONAR HORA E DATA                                     
+//                                                                
 //-----------------------------------------------------------------------------------
 
 const initialState = {
@@ -14,7 +16,8 @@ const initialState = {
         nome: "",
         numero: "",
         pagamento: false
-    }
+    },
+    confMessage: [false,'']
 }
 
 const baseUrl = "http://localhost:3001/cars"
@@ -28,12 +31,15 @@ class AddNew extends React.Component {
     }
 
     save(){
-        const car = this.state.car
+        var car = this.state.car
         //const method = car.id ? 'put' : 'post'
         //const url = car.id ? `${baseUrl}/${car.id}` : baseUrl
+        var now = new Date()
+        car.time = `${now.getHours()}:${now.getMinutes()}`        
         axios.post(baseUrl, car)
             .then(resp => {
                 this.setState({ car: initialState.car })
+                this.setState({ confMessage: [true,car.placa] })
             })
 
     }
@@ -42,6 +48,19 @@ class AddNew extends React.Component {
         const car = { ...this.state.car }
         car[event.target.name] = event.target.value
         this.setState({ car })
+    }
+
+    renderMessage(){
+        if(this.state.confMessage[0]){
+            return (<ConfMessage placa={this.state.confMessage[1]}click={e=>this.destroyMessage(e)}></ConfMessage>)
+        }else{
+            return
+        }
+    }
+
+    destroyMessage(){
+        this.setState({ confMessage: [false,''] })
+        console.log("Button destroy")
     }
 
     renderForm(){
@@ -89,12 +108,12 @@ class AddNew extends React.Component {
                 <br />
                 <div className="row">
                     <label>Pagamento realizado:
+                    </label>
                         <input  className="check" 
                                     type="checkbox" 
                                     name="pagamento" 
                                     value={this.state.car.pagamento}
                                     onChange={e => this.updateField(e)}/>
-                    </label>
                 </div>
 
                 <hr />
@@ -118,8 +137,10 @@ class AddNew extends React.Component {
     render() { 
         return <div className="Main">
             {this.renderForm()}
+            {this.renderMessage()}
         </div>;
     }
 }
  
+//<ConfMessage placa="KDC8924" click={e=>this.destroyMessage(e)}></ConfMessage>
 export default AddNew;

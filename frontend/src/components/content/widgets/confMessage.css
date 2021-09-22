@@ -1,0 +1,13 @@
+.ConfMessage{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #25EB57;
+    color: white;
+    font-weight: bold;
+}
+
+.ConfMessage button{
+    border: none;
+    background-color: none;
+    background: none;
+}
