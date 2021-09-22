@@ -13,6 +13,9 @@
     flex-direction: column;
     justify-content: center;
 }
+hr{
+    margin: 20px 0px;
+}
 
 .Form .row{
     padding: 0px 10px;

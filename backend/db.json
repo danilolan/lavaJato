@@ -19,53 +19,6 @@
       "pagamento": true
     },
     {
-      "time": "",
-      "placa": "nqe0021",
-      "tipoLavagem": "basica",
-      "nome": "Danilo",
-      "numero": "327",
-      "pagamento": "false",
-      "id": 3
-    },
-    {
-      "time": "",
-      "placa": "nqe0021",
-      "tipoLavagem": "basica",
-      "nome": "Danilo Herculano Nóbrega",
-      "numero": "327",
-      "pagamento": "false",
-      "id": 4
-    },
-    {
-      "time": "",
-      "placa": "TGD8742",
-      "tipoLavagem": "basica",
-      "nome": "Thais sales",
-      "numero": "839915648",
-      "pagamento": "false",
-      "": "completa",
-      "id": 5
-    },
-    {
-      "time": "",
-      "placa": "TQER987",
-      "tipoLavagem": "basica",
-      "nome": "Norma Herculano",
-      "numero": "8399240438",
-      "pagamento": false,
-      "id": 6
-    },
-    {
-      "time": "function getHours() { [native code] }:function getMinutes() { [native code] }",
-      "placa": "nqe0021",
-      "tipoLavagem": "basica",
-      "nome": "Danilo",
-      "numero": "327",
-      "pagamento": "false",
-      "": "completa",
-      "id": 7
-    },
-    {
       "time": "14:40",
       "placa": "nqe0021",
       "tipoLavagem": "basica",
@@ -227,6 +180,16 @@
       "numero": "327",
       "pagamento": "false",
       "id": 25
+    },
+    {
+      "time": "15:24",
+      "placa": "nqe0021",
+      "tipoLavagem": "basica",
+      "nome": "Danilo",
+      "numero": "327",
+      "pagamento": "false",
+      "": "completa",
+      "id": 26
     }
   ]
 }
