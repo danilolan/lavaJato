@@ -19,6 +19,18 @@ class Table extends React.Component {
         })
     }
 
+    edit(cars){
+
+    }
+
+    remove(cars){
+        axios.delete(`${baseUrl}/${cars.id}`).then(resp=>{
+            axios(baseUrl).then(resp => {
+                this.setState({ list: resp.data })
+            })
+        })
+    }
+
     rendertable(){
         console.log(this.state.list)
         return(
@@ -61,7 +73,7 @@ class Table extends React.Component {
                     <th> {cars.pagamento ? <i className="fa fa-check text-success"></i> : <i className="fa fa-times text-danger"></i>}</th>
                     <th> 
                         <button className="btn btn-warning"
-                                onClick={() => this.load(cars)}>
+                                onClick={() => this.edit(cars)}>
                                 <i className="fa fa-pencil"></i>
                         </button>
                         <button className="btn btn-danger"

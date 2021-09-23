@@ -5,7 +5,7 @@ import Home from './components/content/Home'
 import AddNew from './components/content/AddNew'
 import Table from './components/content/Table'
 
-function Routes(props) {
+function Routes() {
     return ( 
     <Switch>
         <Route exact path='/' component={Home}/>

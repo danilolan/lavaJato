@@ -35,7 +35,14 @@ class AddNew extends React.Component {
         //const method = car.id ? 'put' : 'post'
         //const url = car.id ? `${baseUrl}/${car.id}` : baseUrl
         var now = new Date()
-        car.time = `${now.getHours()}:${now.getMinutes()}`        
+        var min = ''
+        if(now.getMinutes() < 10){
+            min = `0${now.getMinutes()}`
+        }else{
+            min = now.getMinutes()
+        }
+        car.time = `${now.getHours()}:${min}`
+        console.log(car)        
         axios.post(baseUrl, car)
             .then(resp => {
                 this.setState({ car: initialState.car })
@@ -46,7 +53,8 @@ class AddNew extends React.Component {
 
     updateField(event) {
         const car = { ...this.state.car }
-        car[event.target.name] = event.target.value
+        const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+        car[event.target.name] = value
         this.setState({ car })
     }
 
@@ -60,7 +68,6 @@ class AddNew extends React.Component {
 
     destroyMessage(){
         this.setState({ confMessage: [false,''] })
-        console.log("Button destroy")
     }
 
     renderForm(){
@@ -99,7 +106,7 @@ class AddNew extends React.Component {
                 <div className="row">
                     <label>Tipo de lavagem:</label>
                     <br />
-                    <select className="select" value={this.state.tipoLavagem} onChange={e => this.updateField(e)}>
+                    <select className="select" value={this.state.tipoLavagem} onChange={e => this.updateField(e)} name="tipoLavagem">
                         <option value="basica">Básica</option>
                         <option value="completa">Completa</option>
 
@@ -112,7 +119,7 @@ class AddNew extends React.Component {
                         <input  className="check" 
                                     type="checkbox" 
                                     name="pagamento" 
-                                    value={this.state.car.pagamento}
+                                    checked={this.state.car.pagamento}
                                     onChange={e => this.updateField(e)}/>
                 </div>
 
