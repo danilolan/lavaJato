@@ -3,11 +3,13 @@ import './table.css'
 import axios from 'axios'
 
 import Modal from './widgets/Modal'
+import EditForm from './widgets/EditForm'
 
 const initialState = {
     list: [],
     rowChecked: false,
-    modalIsOpen: false
+    modalIsOpen: false,
+    editingCar: []
 }
 
 const baseUrl = "http://localhost:3001/cars"
@@ -22,20 +24,9 @@ class Table extends React.Component {
         })
     }
 
-    edit(cars){
-        this.setState({modalIsOpen: true})
-    }
-
-    remove(cars){
-        axios.delete(`${baseUrl}/${cars.id}`).then(resp=>{
-            axios(baseUrl).then(resp => {
-                this.setState({ list: resp.data })
-            })
-        })
-    }
-
+    
+    
     rendertable(){
-        console.log(this.state.list)
         return(
             <div className="Table">
                 <table>
@@ -59,7 +50,7 @@ class Table extends React.Component {
             </div>
         )
     }
-
+    
     renderRows(){ 
         return ( this.state.list.map(cars => {
             //let classes = 'row '
@@ -88,23 +79,36 @@ class Table extends React.Component {
             )
         }))
     }
-
+    
     rowChecked(){
         
     }
     
-    closeModal(){
-        this.setState({modalIsOpen: false})
+    edit(cars){
+        this.setState({modalIsOpen: true})
+        this.setState({editingCar: cars})
     }
 
+    closeModal(){
+        this.setState({modalIsOpen: false})
+        this.componentWillMount()
+    }
+    
+    remove(cars){
+        axios.delete(`${baseUrl}/${cars.id}`).then(resp=>{
+            axios(baseUrl).then(resp => {
+                this.setState({ list: resp.data })
+            })
+        })
+    }
     render() { 
         return <div className="Main">
             {this.rendertable()}
             <Modal isOpen={this.state.modalIsOpen} click={e=>this.closeModal(e)}>
-                <h1>Titolo</h1>
+                <EditForm editingCar= {this.state.editingCar} close={e=>this.closeModal(e)}></EditForm>
             </Modal>
         </div>;
     }
 }
- 
+
 export default Table;

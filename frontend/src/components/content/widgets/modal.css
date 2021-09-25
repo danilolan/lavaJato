@@ -1,7 +1,7 @@
 .uiModal{
     background-color: white;
     width: 400px;
-    height: 400px;
+    height: max-content;
     margin: 100px auto 0px auto;
     padding: 15px;
     border-radius: 4px;
@@ -20,7 +20,8 @@
     background-color: rgba(0,0,0,0.5);
 }
 
-.btn{
+.button{
+    border: unset;
     color: #fff;
     background-color: #d9534f;
     border-color: #d43f3a;

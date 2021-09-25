@@ -11,7 +11,7 @@ const Modal = ({isOpen,children,click}) => {
     return ReactDOM.createPortal(
         <div className="uiModalOverlay">
             <div className="uiModal">
-                <button type="button" className="btn" onClick={click}>
+                <button type="button" className="button" onClick={click}>
                     <i class="fa fa-times"></i>
                 </button>
                 {children}
