@@ -2,9 +2,12 @@ import React from 'react';
 import './table.css'
 import axios from 'axios'
 
+import Modal from './widgets/Modal'
+
 const initialState = {
     list: [],
-    rowChecked: false
+    rowChecked: false,
+    modalIsOpen: false
 }
 
 const baseUrl = "http://localhost:3001/cars"
@@ -20,7 +23,7 @@ class Table extends React.Component {
     }
 
     edit(cars){
-
+        this.setState({modalIsOpen: true})
     }
 
     remove(cars){
@@ -89,10 +92,17 @@ class Table extends React.Component {
     rowChecked(){
         
     }
+    
+    closeModal(){
+        this.setState({modalIsOpen: false})
+    }
 
     render() { 
         return <div className="Main">
             {this.rendertable()}
+            <Modal isOpen={this.state.modalIsOpen} click={e=>this.closeModal(e)}>
+                <h1>Titolo</h1>
+            </Modal>
         </div>;
     }
 }

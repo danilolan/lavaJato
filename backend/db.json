@@ -1,33 +1,6 @@
 {
   "cars": [
     {
-      "time": "17:04",
-      "placa": "MOM2678",
-      "tipoLavagem": "basica",
-      "nome": "Sarah Herculano",
-      "numero": "8392586529",
-      "pagamento": true,
-      "id": 5
-    },
-    {
-      "time": "17:05",
-      "placa": "MZO6290",
-      "tipoLavagem": "basica",
-      "nome": "Vinicius Sarmento",
-      "numero": "83954628129",
-      "pagamento": false,
-      "id": 6
-    },
-    {
-      "time": "17:08",
-      "placa": "MDU9284",
-      "tipoLavagem": "basica",
-      "nome": "Daniel Nobrega",
-      "numero": "8399456879",
-      "pagamento": false,
-      "id": 7
-    },
-    {
       "time": "15:53",
       "placa": "nqe0021",
       "tipoLavagem": "basica",
