@@ -8,6 +8,7 @@ import EditForm from './widgets/EditForm'
 const initialState = {
     list: [],
     rowChecked: false,
+    rowCheckedList: [],
     modalIsOpen: false,
     editingCar: []
 }
@@ -36,9 +37,9 @@ class Table extends React.Component {
                             <th><i className="fa fa-check-square text-success"></i></th>
                             <th>Hora</th>
                             <th>Placa</th>
-                            <th>Lavagem</th>
                             <th>Nome</th>
                             <th>Número</th>
+                            <th>Lavagem</th>
                             <th>Pagamento</th>
                             <th>Ações</th>
                         </tr>
@@ -53,17 +54,19 @@ class Table extends React.Component {
     
     renderRows(){ 
         return ( this.state.list.map(cars => {
-            //let classes = 'row '
-            //const rowChecked = this.state.rowChecked 
-            //classes += rowChecked ? 'checked' : ''
+            let classes = 'row '
+            const index = this.state.rowCheckedList.indexOf(cars.id);
+            if (index > -1) {
+                classes += 'checked'
+            }
             return(
-                <tr className = "row" key={cars.id}>
-                    <th> <input type="checkbox" onClick={() => this.rowChecked()} /></th>
+                <tr className = {classes} key={cars.id}>
+                    <th> <input type="checkbox" onChange={() => this.rowChecked(cars.id)} /></th>
                     <th> {cars.time} </th>
                     <th> {cars.placa} </th>
-                    <th> {cars.tipoLavagem} </th>
                     <th> {cars.nome} </th>
                     <th> {cars.numero} </th>
+                    <th> {cars.tipoLavagem} </th>
                     <th> {cars.pagamento ? <i className="fa fa-check text-success"></i> : <i className="fa fa-times text-danger"></i>}</th>
                     <th> 
                         <button className="btn btn-warning"
@@ -80,8 +83,16 @@ class Table extends React.Component {
         }))
     }
     
-    rowChecked(){
-        
+    rowChecked(id){
+        let array = this.state.rowCheckedList
+        const index = array.indexOf(id);
+        if (index > -1) {
+            array.splice(index, 1);
+        }else{
+            array.push(id)
+        }
+        this.setState({rowCheckedList: array})
+        console.log(this.state.rowCheckedList)
     }
     
     edit(cars){

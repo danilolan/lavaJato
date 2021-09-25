@@ -26,3 +26,7 @@
 .Table input{
     margin: 0;
 }
+
+.row.checked{
+    background-color: #0ff7367c;
+}

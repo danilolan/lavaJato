@@ -2,11 +2,11 @@
   "cars": [
     {
       "time": "22:27",
-      "placa": "nqe0021",
-      "tipoLavagem": "completa",
-      "nome": "Norma Herculano",
-      "numero": "83954628129",
-      "pagamento": false,
+      "placa": "nqe0026",
+      "tipoLavagem": "basica",
+      "nome": "Danilo Herculano Nóbrega",
+      "numero": "83954628120",
+      "pagamento": true,
       "id": 12
     },
     {
