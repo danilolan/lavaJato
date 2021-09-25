@@ -60,7 +60,7 @@ class Table extends React.Component {
             }
             return(
                 <tr className = {classes} key={cars.id}>
-                    <th> <input className="tableCheckbox" type="checkbox" onChange={() => this.rowChecked(cars.id)} /></th>
+                    <th> <input className="tableCheckbox" type="checkbox" onChange={() => this.rowChecked(cars)} checked={cars.entregue} /></th>
                     <th> {cars.time} </th>
                     <th> {cars.placa} </th>
                     <th> {cars.nome} </th>
@@ -82,8 +82,15 @@ class Table extends React.Component {
         }))
     }
     
-    rowChecked(id){
-    
+    rowChecked(car){
+        car.entregue ? car.entregue = false : car.entregue = true
+        axios.put(`${baseUrl}/${car.id}`, car)
+            .then(resp => {
+                axios(baseUrl).then(resp => {
+                    this.setState({ list: resp.data })
+                })
+            })
+        
     }
     
     edit(cars){
