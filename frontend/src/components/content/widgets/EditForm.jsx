@@ -42,7 +42,6 @@ class EditForm extends React.Component {
     }
 
     renderForm(){
-        console.log(this.state.car.id)
         return(
             <div className="editForm">
                 <div className="editRow">
@@ -125,6 +124,5 @@ class EditForm extends React.Component {
         </div>;
     }
 }
- 
-//<ConfMessage placa="KDC8924" click={e=>this.destroyMessage(e)}></ConfMessage>
+
 export default EditForm;

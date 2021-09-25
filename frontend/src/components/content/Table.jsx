@@ -34,7 +34,7 @@ class Table extends React.Component {
                     <thead>
                         <tr>
                             <th></th>
-                            <th><i className="fa fa-check-square text-success"></i></th>
+                            <th><i className="tableCheckIcon fa fa-check-square text-success"></i></th>
                             <th>Hora</th>
                             <th>Placa</th>
                             <th>Nome</th>
@@ -55,25 +55,24 @@ class Table extends React.Component {
     renderRows(){ 
         return ( this.state.list.map(cars => {
             let classes = 'row '
-            const index = this.state.rowCheckedList.indexOf(cars.id);
-            if (index > -1) {
+            if (cars.entregue === true) {
                 classes += 'checked'
             }
             return(
                 <tr className = {classes} key={cars.id}>
-                    <th> <input type="checkbox" onChange={() => this.rowChecked(cars.id)} /></th>
+                    <th> <input className="tableCheckbox" type="checkbox" onChange={() => this.rowChecked(cars.id)} /></th>
                     <th> {cars.time} </th>
                     <th> {cars.placa} </th>
                     <th> {cars.nome} </th>
                     <th> {cars.numero} </th>
                     <th> {cars.tipoLavagem} </th>
-                    <th> {cars.pagamento ? <i className="fa fa-check text-success"></i> : <i className="fa fa-times text-danger"></i>}</th>
+                    <th> {cars.pagamento ? <i className="paymentIcon fa fa-check text-success"></i> : <i className="paymentIcon fa fa-times text-danger"></i>}</th>
                     <th> 
-                        <button className="btn btn-warning"
+                        <button className="actionButton btn btn-warning"
                                 onClick={() => this.edit(cars)}>
                                 <i className="fa fa-pencil"></i>
                         </button>
-                        <button className="btn btn-danger"
+                        <button className="actionButton btn btn-danger"
                                 onClick={() => this.remove(cars)}>
                                 <i className="fa fa-trash"></i>
                         </button>
@@ -84,15 +83,7 @@ class Table extends React.Component {
     }
     
     rowChecked(id){
-        let array = this.state.rowCheckedList
-        const index = array.indexOf(id);
-        if (index > -1) {
-            array.splice(index, 1);
-        }else{
-            array.push(id)
-        }
-        this.setState({rowCheckedList: array})
-        console.log(this.state.rowCheckedList)
+    
     }
     
     edit(cars){

@@ -12,7 +12,7 @@ const Modal = ({isOpen,children,click}) => {
         <div className="uiModalOverlay">
             <div className="uiModal">
                 <button type="button" className="button" onClick={click}>
-                    <i class="fa fa-times"></i>
+                    <i className="fa fa-times"></i>
                 </button>
                 {children}
             </div>

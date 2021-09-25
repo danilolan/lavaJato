@@ -17,16 +17,45 @@
 
 .Table thead{
     font-size: 1.2em;
+    border-bottom: solid 1px #0006;
+    width: max-content;
 }
 
 .Table tbody{
-    font-weight: 100;
+    font-family: Roboto , sans-serif;
 }
 
-.Table input{
-    margin: 0;
+tbody:before {
+    content:"@";
+    display:block;
+    line-height:5px;
+    text-indent:-99999px;
+}
+
+input[type=checkbox].tableCheckbox{
+    float:left;
+    margin: 0px 5px 0px 5px;
+    cursor: pointer;
+}
+
+.row{
+    border-radius: 5px;
 }
 
 .row.checked{
     background-color: #0ff7367c;
+}
+
+.tableCheckIcon{
+    font-size: 27px;
+}
+
+.paymentIcon{
+    font-size: 25px;
+}
+
+.actionButton{
+    padding: 0px 6px;
+    font-size: 20px;
+    margin: 2px;
 }

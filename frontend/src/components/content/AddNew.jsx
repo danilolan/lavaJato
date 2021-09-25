@@ -10,6 +10,7 @@ import ConfMessage from './widgets/ConfMessage';
 
 const initialState = {
     car:{
+        entregue: false,
         time: "",
         placa: "",
         tipoLavagem: "basica",
