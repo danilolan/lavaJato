@@ -42,8 +42,7 @@ class AddNew extends React.Component {
         }else{
             min = now.getMinutes()
         }
-        car.time = `${now.getHours()}:${min}`
-        console.log(car)        
+        car.time = `${now.getHours()}:${min}`      
         axios.post(baseUrl, car)
             .then(resp => {
                 this.setState({ car: initialState.car })

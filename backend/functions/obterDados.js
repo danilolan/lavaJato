@@ -1,7 +1,7 @@
 const db = require('../db.json')
 
 function obterDados(req,res){
-    res.send(db)
+    res.send(db.cars)
 }
 
 module.exports = obterDados

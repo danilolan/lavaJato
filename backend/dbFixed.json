@@ -1,0 +1,104 @@
+{
+    "cars": [
+      {
+        "entregue": true,
+        "time": "19:18",
+        "placa": "NQE0021",
+        "tipoLavagem": "completa",
+        "nome": "Danilo Herculano Nóbrega",
+        "numero": "83995647821",
+        "pagamento": true,
+        "id": 1
+      },
+      {
+        "entregue": true,
+        "time": "19:20",
+        "placa": "NDK2094",
+        "tipoLavagem": "basica",
+        "nome": "Vinicius Sarmento",
+        "numero": "83994568797",
+        "pagamento": true,
+        "id": 3
+      },
+      {
+        "entregue": true,
+        "time": "19:20",
+        "placa": "MZO6290",
+        "tipoLavagem": "basica",
+        "nome": "Norma Herculano",
+        "numero": "83916572863",
+        "pagamento": false,
+        "id": 6
+      },
+      {
+        "entregue": false,
+        "time": "19:21",
+        "placa": "JGN7692",
+        "tipoLavagem": "basica",
+        "nome": "Daniel Nobrega",
+        "numero": "83994568795",
+        "pagamento": true,
+        "id": 7
+      },
+      {
+        "entregue": false,
+        "time": "19:21",
+        "placa": "MGJ3057",
+        "tipoLavagem": "completa",
+        "nome": "Thais Sales",
+        "numero": "83991658152",
+        "pagamento": false,
+        "id": 8
+      },
+      {
+        "entregue": false,
+        "time": "19:25",
+        "placa": "NQE0021",
+        "tipoLavagem": "completa",
+        "nome": "Danilo Herculano Nóbrega",
+        "numero": "83995647821",
+        "pagamento": true,
+        "id": 9
+      },
+      {
+        "entregue": false,
+        "time": "19:28",
+        "placa": "NDK2094",
+        "tipoLavagem": "basica",
+        "nome": "Vinicius Sarmento",
+        "numero": "83994568797",
+        "pagamento": true,
+        "id": 10
+      },
+      {
+        "entregue": true,
+        "time": "19:29",
+        "placa": "MZO6290",
+        "tipoLavagem": "basica",
+        "nome": "Norma Herculano",
+        "numero": "83916572863",
+        "pagamento": false,
+        "id": 11
+      },
+      {
+        "entregue": false,
+        "time": "19:32",
+        "placa": "JGN7692",
+        "tipoLavagem": "basica",
+        "nome": "Daniel Nobrega",
+        "numero": "83994568795",
+        "pagamento": true,
+        "id": 12
+      },
+      {
+        "entregue": false,
+        "time": "19:36",
+        "placa": "MGJ3057",
+        "tipoLavagem": "completa",
+        "nome": "Thais Sales",
+        "numero": "83991658152",
+        "pagamento": false,
+        "id": 13
+      }
+    ]
+  }

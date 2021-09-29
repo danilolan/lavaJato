@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { version } from 'react';
 import './table.css'
 import axios from 'axios'
 
@@ -20,7 +20,7 @@ class Table extends React.Component {
     state = {...initialState}
 
     componentWillMount() {
-        axios(baseUrl).then(resp => {
+        axios.get(baseUrl).then(resp => {
             this.setState({ list: resp.data })
         })
     }
