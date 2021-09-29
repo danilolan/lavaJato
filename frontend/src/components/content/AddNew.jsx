@@ -1,6 +1,7 @@
 import React from 'react';
 import './addNew.css'
 import axios from 'axios'
+import InputMask from 'react-input-mask'
 
 import ConfMessage from './widgets/ConfMessage';
 
@@ -20,8 +21,18 @@ const initialState = {
     },
     confMessage: [false,'']
 }
-
 const baseUrl = "http://localhost:3001/cars"
+
+function addTime(){
+    var now = new Date()
+        var min = ''
+        if(now.getMinutes() < 10){
+            min = `0${now.getMinutes()}`
+        }else{
+            min = now.getMinutes()
+        }
+    return `${now.getHours()}:${min}`
+}
 
 class AddNew extends React.Component {
 
@@ -32,23 +43,18 @@ class AddNew extends React.Component {
     }
 
     save(){
-        var car = this.state.car
-        //const method = car.id ? 'put' : 'post'
-        //const url = car.id ? `${baseUrl}/${car.id}` : baseUrl
-        var now = new Date()
-        var min = ''
-        if(now.getMinutes() < 10){
-            min = `0${now.getMinutes()}`
+        var car = this.state.car 
+        car.time = addTime()
+
+        if(car.nome !== '' && car.placa !== '' && car.numero !== ''){
+            axios.post(baseUrl, car)
+                .then(resp => {
+                    this.setState({ car: initialState.car })
+                    this.setState({ confMessage: [true,car.placa] })
+                })
         }else{
-            min = now.getMinutes()
-        }
-        car.time = `${now.getHours()}:${min}`
-        console.log(car)        
-        axios.post(baseUrl, car)
-            .then(resp => {
-                this.setState({ car: initialState.car })
-                this.setState({ confMessage: [true,car.placa] })
-            })
+            return console.log('Nao rolou')
+        }       
 
     }
 
@@ -96,12 +102,14 @@ class AddNew extends React.Component {
                 <br />
                 <div className="row">
                     <label>Número:</label>
-                    <input  className="form-control" 
+                    <InputMask  className="form-control" 
                             type="text" 
                             name="numero" 
                             value={this.state.car.numero}
                             onChange={e => this.updateField(e)}
-                            placeholder="Digite a número..."/>
+                            placeholder="Digite a número..."
+                            mask="(99)99999-9999"
+                            />
                 </div>
                 <br />
                 <div className="row">
